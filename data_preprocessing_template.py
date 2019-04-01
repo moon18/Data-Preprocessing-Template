@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from sklearn.cross_validation import train_test_split
 
 
 def dataPreprocess(dataset,int(test_size=0.8),int(random_state=0),feature_scaling=False):
@@ -16,4 +17,4 @@ def dataPreprocess(dataset,int(test_size=0.8),int(random_state=0),feature_scalin
         X_test = sc_X.transform(X_test)
         sc_y = StandardScaler()
         y_train = sc_y.fit_transform(y_train)
-    return X_test,y_test,X_train,y_train
+    return X_train,y_train,X_test,y_test
